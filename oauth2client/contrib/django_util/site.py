@@ -14,13 +14,13 @@
 
 """Contains Django URL patterns used for OAuth2 flow."""
 
-from django.conf import urls
+from django.urls import re_path
 
 from oauth2client.contrib.django_util import views
 
 urlpatterns = [
-    urls.url(r'oauth2callback/', views.oauth2_callback, name="callback"),
-    urls.url(r'oauth2authorize/', views.oauth2_authorize, name="authorize")
+    re_path(r'oauth2callback/', views.oauth2_callback, name="callback"),
+    re_path(r'oauth2authorize/', views.oauth2_authorize, name="authorize")
 ]
 
 urls = (urlpatterns, "google_oauth", "google_oauth")
